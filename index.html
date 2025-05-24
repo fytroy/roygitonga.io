@@ -3,20 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome GitHub Page</title>
+    <title>[Your Name] - IT Support Specialist Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website!</h1>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="nav-logo">[Your Initials]</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
+
     <main>
-        <p>This is a simple website hosted on GitHub Pages.</p>
-        <img src="images/logo.png" alt="My Logo">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <img src="images/profile.jpg" alt="[Your Name] Profile Picture" class="profile-pic">
+                <h1>Hi, I'm [Your Name]</h1>
+                <h2>IT Support Specialist</h2>
+                <p class="tagline">[Your 2-3 sentence professional summary here. E.g., "Highly motivated IT Support Specialist with X years of experience providing comprehensive technical assistance and resolving complex hardware/software issues for diverse user bases. Passionate about leveraging strong problem-solving skills to ensure seamless operations and enhance user satisfaction."]</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/[YourLinkedIn]" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/[YourGitHub]" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>[Elaborate slightly more on your professional journey, passion for IT, problem-solving approach, and what you bring to a team. Use your summary from the previous prompt as a starting point.]</p>
+                <p>My passion lies in ensuring seamless technical operations and providing exceptional user support. I thrive in dynamic environments where I can apply my expertise to diagnose and resolve complex issues, optimize systems, and contribute to a productive technological ecosystem.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Operating Systems</h3>
+                        <ul>
+                            <li>Windows 10/11</li>
+                            <li>macOS</li>
+                            <li>Linux (Ubuntu, CentOS)</li>
+                            <li>Windows Server</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Hardware</h3>
+                        <ul>
+                            <li>Desktop PCs & Laptops</li>
+                            <li>Printers & Peripherals</li>
+                            <li>Networking Equipment (Routers, Switches, APs)</li>
+                            <li>Mobile Devices</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Software & Applications</h3>
+                        <ul>
+                            <li>Microsoft Office Suite (365, Exchange)</li>
+                            <li>Google Workspace</li>
+                            <li>Ticketing Systems (Zendesk, ServiceNow)</li>
+                            <li>Remote Desktop Tools (TeamViewer, AnyDesk)</li>
+                            <li>Antivirus Solutions</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Networking</h3>
+                        <ul>
+                            <li>TCP/IP, DNS, DHCP</li>
+                            <li>VPN Configuration</li>
+                            <li>Wi-Fi Troubleshooting</li>
+                            <li>Basic Routing & Switching</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Troubleshooting & Support</h3>
+                        <ul>
+                            <li>ITIL Principles</li>
+                            <li>Root Cause Analysis</li>
+                            <li>Problem Resolution</li>
+                            <li>User Training</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <ul>
+                            <li>Customer Service Excellence</li>
+                            <li>Clear Communication</li>
+                            <li>Active Listening</li>
+                            <li>Adaptability</li>
+                        </ul>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>IT Support Specialist <span class="company-name">@ [Company Name 1]</span></h3>
+                        <p class="dates">[Month Year] – [Month Year]</p>
+                        <ul>
+                            <li>[Achievement/Responsibility 1 - e.g., "Resolved an average of 30+ IT tickets daily, maintaining a 95% customer satisfaction rate."]</li>
+                            <li>[Achievement/Responsibility 2 - e.g., "Configured and deployed new hardware for 50+ employees, ensuring smooth onboarding."]</li>
+                            <li>[Achievement/Responsibility 3 - e.g., "Provided expert technical assistance for Windows, macOS, and mobile devices."]</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Help Desk Technician <span class="company-name">@ [Company Name 2]</span></h3>
+                        <p class="dates">[Month Year] – [Month Year]</p>
+                        <ul>
+                            <li>[Achievement/Responsibility 1 - e.g., "Managed user accounts and permissions in Active Directory."]</li>
+                            <li>[Achievement/Responsibility 2 - e.g., "Troubleshot network connectivity issues for remote users."]</li>
+                            <li>[Achievement/Responsibility 3 - e.g., "Documented common IT issues and solutions in a knowledge base."]</li>
+                        </ul>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <h2>Education & Certifications</h2>
+                <div class="education-item">
+                    <h3>[Degree/Diploma Name]</h3>
+                    <p class="institution">[Institution Name]</p>
+                    <p class="dates">[Year of Graduation]</p>
+                </div>
+                <div class="certification-item">
+                    <h3>[Certification Name 1]</h3>
+                    <p class="institution">[Issuing Body]</p>
+                    <p class="dates">[Year Obtained]</p>
+                </div>
+                <div class="certification-item">
+                    <h3>[Certification Name 2]</h3>
+                    <p class="institution">[Issuing Body]</p>
+                    <p class="dates">[Year Obtained]</p>
+                </div>
+                </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Home Lab Setup & Management</h3>
+                        <p>Designed and implemented a personal home lab environment for skill development and testing.</p>
+                        <ul>
+                            <li>Deployed virtual machines (Windows Server, Linux) using VMware/VirtualBox.</li>
+                            <li>Configured Active Directory, DNS, and DHCP services.</li>
+                            <li>Set up network segmentation and firewall rules.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn">View Details <i class="fas fa-external-link-alt"></i></a> </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Automated Daily Report Script</h3>
+                        <p>Developed a PowerShell script to automate the generation of daily IT system health reports.</p>
+                        <ul>
+                            <li>Utilized PowerShell cmdlets to gather system performance data.</li>
+                            <li>Formatted data into a readable report and emailed it to stakeholders.</li>
+                            <li>Reduced manual reporting time by 30 minutes daily.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/your-script-repo" target="_blank" class="btn">GitHub Repo <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>I'm always open to discussing new opportunities or collaborations. Feel free to reach out!</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:[YourEmail@example.com]" id="emailLink">[YourEmail@example.com]</a> <button id="copyEmailBtn" class="copy-btn" title="Copy Email"><i class="fas fa-copy"></i></button></p>
+                    <p><i class="fas fa-phone"></i> Phone: [Your Phone Number (Optional)]</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Location: [Your City, Country (Optional)]</p>
+                </div>
+                <div class="social-links large-icons">
+                    <a href="https://linkedin.com/in/[YourLinkedIn]" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/[YourGitHub]" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    </div>
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2025 My GitHub Pages</p>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 [Your Name]. All rights reserved. <br> Powered by GitHub Pages.</p>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
