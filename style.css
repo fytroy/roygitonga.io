@@ -345,6 +345,11 @@ a:hover {
     border-radius: 8px;
     box-shadow: var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* The following properties have been removed to allow for separated, staggered tiles */
+    /* align-self: start; */
+    /* height: 100%; */
+    /* display: flex; */
+    /* flex-direction: column; */
 }
 
 .skill-category:hover {
@@ -364,6 +369,7 @@ a:hover {
     list-style: none;
     padding: 0;
     margin: 0;
+    /* flex-grow: 1; - Removed for the separated tile effect */
 }
 
 .skill-category ul li {
@@ -417,11 +423,12 @@ a:hover {
     padding: 15px 20px;
     border-radius: 8px;
     box-shadow: var(--shadow-light);
+    /* Keep flexbox for consistent styling of the list item container */
     display: flex;
-    align-items: center;
-    gap: 10px; /* Space between text and credential link */
+    align-items: center; /* Vertically centers the text within the list item */
+    gap: 10px; /* Spacing if you add an icon or prefix later */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    color: var(--text-color);
+    color: var(--text-color); /* Fallback, link color will override this */
     font-size: 0.95em;
 }
 
@@ -430,11 +437,22 @@ a:hover {
     box-shadow: 0 6px 15px var(--shadow-strong);
 }
 
+/* Style for the link *inside* the list item */
 .cert-list li a {
-    white-space: nowrap; /* Prevent credential link from wrapping */
-    font-weight: bold;
-    font-size: 0.9em;
+    color: var(--primary-color); /* Make the link text stand out */
+    text-decoration: none; /* No underline by default */
+    font-weight: bold; /* Make it bold */
+    display: block; /* Make the entire area of the list item clickable (for the link) */
+    width: 100%; /* Ensures the link covers the full width of the li */
+    padding: 0; /* Remove any padding that might push the link away from the edge */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
+
+.cert-list li a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline; /* Add underline on hover for visual feedback */
+}
+
 
 /* Contact Section */
 #contact {
