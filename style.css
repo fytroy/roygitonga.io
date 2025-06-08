@@ -315,9 +315,9 @@ a:hover {
 }
 
 .project-card ul {
-    list-style: none; /* Remove bullet points for tech list */
+    list-style: disc; /* Changed to disc for bullet points */
     padding: 0;
-    margin-left: 0;
+    margin-left: 20px; /* Add margin for bullet indentation */
     margin-bottom: 20px;
 }
 
@@ -366,9 +366,9 @@ a:hover {
 }
 
 .skill-category ul {
-    list-style: none;
+    list-style: disc; /* Changed to disc for bullet points */
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 20px; /* Add left margin for bullet indentation */
     /* flex-grow: 1; - Removed for the separated tile effect */
 }
 
@@ -565,7 +565,11 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5em;
+        font-size: 2em; /* Reduced for smaller screens */
+    }
+
+    .hero-section .tagline {
+        font-size: 1.2em; /* Reduced for smaller screens */
     }
 
     h2 {
@@ -577,12 +581,19 @@ footer {
     }
 
     .navbar ul {
-        flex-direction: column;
+        flex-direction: row; /* Keep it row for landscape effect */
+        justify-content: space-around; /* Distribute items evenly */
         align-items: center;
+        padding: 0 10px; /* Add some horizontal padding */
     }
 
     .navbar ul li {
-        margin: 10px 0;
+        margin: 5px 5px; /* Reduce vertical margin, add small horizontal margin */
+    }
+
+    .navbar ul li a {
+        padding: 8px 10px; /* Add padding to make links easier to tap */
+        font-size: 0.9em; /* Slightly smaller font for more items */
     }
 
     .skills-grid {
@@ -605,11 +616,11 @@ footer {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.8em; /* Further reduction for very small screens */
     }
 
     .hero-section .tagline {
-        font-size: 1.2em;
+        font-size: 1em; /* Further reduction for very small screens */
     }
 
     .social-links a {
@@ -620,5 +631,14 @@ footer {
     .profile-pic.about-img {
         width: 150px;
         height: 150px;
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack vertically on very small screens if too cramped */
+        padding: 10px 0;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
     }
 }
