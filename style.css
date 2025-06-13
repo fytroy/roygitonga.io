@@ -163,7 +163,14 @@ a:hover {
     box-shadow: 0 2px 10px var(--shadow-strong);
 }
 
-.navbar ul {
+.navbar .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Needed for positioning menu-toggle */
+}
+
+.navbar ul.nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -172,11 +179,11 @@ a:hover {
     flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
-.navbar ul li {
+.navbar ul.nav-links li {
     margin: 0 15px;
 }
 
-.navbar ul li a {
+.navbar ul.nav-links li a {
     color: var(--text-color);
     font-weight: bold;
     padding: 5px 0;
@@ -184,7 +191,7 @@ a:hover {
     transition: color 0.3s ease;
 }
 
-.navbar ul li a::after {
+.navbar ul.nav-links li a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -196,18 +203,30 @@ a:hover {
     transition: width 0.3s ease;
 }
 
-.navbar ul li a:hover {
+.navbar ul.nav-links li a:hover {
     color: var(--primary-color);
     text-decoration: none;
 }
 
-.navbar ul li a:hover::after,
-.navbar ul li a.active::after { /* Add 'active' class via JS for current section */
+.navbar ul.nav-links li a:hover::after,
+.navbar ul.nav-links li a.active::after { /* Add 'active' class via JS for current section */
     width: 100%;
     left: 0;
     background: var(--primary-color);
 }
 
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    font-size: 1.8em;
+    color: var(--primary-color);
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001; /* Ensure it's above the nav links when open */
+}
 
 /* Section Styling */
 .section {
@@ -345,11 +364,6 @@ a:hover {
     border-radius: 8px;
     box-shadow: var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* The following properties have been removed to allow for separated, staggered tiles */
-    /* align-self: start; */
-    /* height: 100%; */
-    /* display: flex; */
-    /* flex-direction: column; */
 }
 
 .skill-category:hover {
@@ -369,7 +383,6 @@ a:hover {
     list-style: disc; /* Changed to disc for bullet points */
     padding: 0;
     margin: 0 0 0 20px; /* Add left margin for bullet indentation */
-    /* flex-grow: 1; - Removed for the separated tile effect */
 }
 
 .skill-category ul li {
@@ -423,12 +436,11 @@ a:hover {
     padding: 15px 20px;
     border-radius: 8px;
     box-shadow: var(--shadow-light);
-    /* Keep flexbox for consistent styling of the list item container */
     display: flex;
-    align-items: center; /* Vertically centers the text within the list item */
-    gap: 10px; /* Spacing if you add an icon or prefix later */
+    align-items: center;
+    gap: 10px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    color: var(--text-color); /* Fallback, link color will override this */
+    color: var(--text-color);
     font-size: 0.95em;
 }
 
@@ -439,18 +451,151 @@ a:hover {
 
 /* Style for the link *inside* the list item */
 .cert-list li a {
-    color: var(--primary-color); /* Make the link text stand out */
-    text-decoration: none; /* No underline by default */
-    font-weight: bold; /* Make it bold */
-    display: block; /* Make the entire area of the list item clickable (for the link) */
-    width: 100%; /* Ensures the link covers the full width of the li */
-    padding: 0; /* Remove any padding that might push the link away from the edge */
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    padding: 0;
     transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .cert-list li a:hover {
     color: var(--secondary-color);
-    text-decoration: underline; /* Add underline on hover for visual feedback */
+    text-decoration: underline;
+}
+
+/* Blog Section Styles */
+.blog-intro-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    color: var(--text-color-light);
+}
+
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.blog-post-card {
+    background-color: var(--card-background-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-strong);
+}
+
+.blog-post-card h3 {
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1.5em; /* Slightly smaller heading for cards */
+}
+
+.blog-post-card .post-meta {
+    font-size: 0.85em;
+    color: var(--text-color-light);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.blog-post-card .post-excerpt {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows excerpt to take available space */
+}
+
+.blog-post-card .post-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.blog-post-card .post-tags li {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.blog-post-card .read-more-btn {
+    align-self: flex-start; /* Align button to the left */
+    margin-top: auto; /* Pushes button to the bottom */
+}
+
+/* Full Blog Post View (initially hidden) */
+.full-blog-post {
+    background-color: var(--card-background-color);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-strong);
+    margin-top: 50px;
+    text-align: left;
+}
+
+.full-blog-post h3 {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 2em;
+    color: var(--primary-color);
+}
+
+.full-blog-post .post-meta {
+    font-size: 0.9em;
+    color: var(--text-color-light);
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.full-blog-post p {
+    margin-bottom: 1.5em;
+    line-height: 1.7;
+}
+
+.full-blog-post h4 {
+    color: var(--heading-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.full-blog-post ul {
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.full-blog-post ul li {
+    margin-bottom: 10px;
+}
+
+.blog-post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-light);
+}
+
+.back-to-blog-btn {
+    margin-top: 30px;
 }
 
 
@@ -580,21 +725,54 @@ footer {
         padding: 80px 20px;
     }
 
-    .navbar ul {
-        flex-direction: row; /* Keep it row for landscape effect */
-        justify-content: space-around; /* Distribute items evenly */
-        align-items: center;
-        padding: 0 10px; /* Add some horizontal padding */
+    /* Mobile Navbar specific styles */
+    .navbar .container {
+        justify-content: space-between; /* Space out toggle and potential logo */
     }
 
-    .navbar ul li {
-        margin: 5px 5px; /* Reduce vertical margin, add small horizontal margin */
+    .menu-toggle {
+        display: block; /* Show hamburger on mobile */
     }
 
-    .navbar ul li a {
-        padding: 8px 10px; /* Add padding to make links easier to tap */
-        font-size: 0.9em; /* Slightly smaller font for more items */
+    .navbar ul.nav-links {
+        display: none; /* Hide horizontal nav by default on mobile */
+        flex-direction: column; /* Stack vertically when open */
+        width: 100%;
+        background-color: var(--card-background-color); /* Same as navbar background */
+        position: fixed; /* Make it fluid/sticky when open */
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px var(--shadow-strong);
+        transition: transform 0.3s ease-out;
+        transform: translateX(-100%); /* Start off-screen */
+        overflow-y: auto; /* Enable scrolling for many links */
+        max-height: calc(100vh - 60px); /* Fill remaining viewport height */
     }
+
+    .navbar ul.nav-links.open {
+        display: flex; /* Show when open */
+        transform: translateX(0); /* Slide in */
+    }
+
+    .navbar ul.nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .navbar ul.nav-links li a {
+        padding: 10px 20px;
+        display: block; /* Make links full width for easier tapping */
+    }
+    /* Remove the ::after pseudo-element for mobile links if not desired */
+    .navbar ul.nav-links li a::after {
+        display: none;
+    }
+    .navbar ul.nav-links li a.active {
+        color: var(--primary-color); /* Keep active state visible */
+        background-color: rgba(0, 188, 212, 0.1); /* Subtle background for active mobile link */
+    }
+
 
     .skills-grid {
         grid-template-columns: 1fr; /* Stack skills categories on small screens */
@@ -611,6 +789,10 @@ footer {
     .contact-info {
         flex-direction: column;
         align-items: center;
+    }
+
+    .blog-posts-grid {
+        grid-template-columns: 1fr; /* Stack blog cards on small screens */
     }
 }
 
@@ -631,14 +813,5 @@ footer {
     .profile-pic.about-img {
         width: 150px;
         height: 150px;
-    }
-
-    .navbar ul {
-        flex-direction: column; /* Stack vertically on very small screens if too cramped */
-        padding: 10px 0;
-    }
-
-    .navbar ul li {
-        margin: 5px 0;
     }
 }
