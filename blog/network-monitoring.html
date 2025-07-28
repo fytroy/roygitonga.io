@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post: Understanding Network Monitoring</title>
+  <link rel="stylesheet" href="../css/style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<header id="navbar">
+  <nav class="container">
+    <div class="logo"><a href="../index.html">RodneyGitonga</a></div>
+    <ul>
+      <li><a href="../index.html#hero">Home</a></li>
+      <li><a href="../index.html#about">About Me</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#certifications">Certifications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#blog" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="blog-single-post container">
+  <article>
+    <h1 class="blog-title">Understanding Network Monitoring: My Multi-Tool System Monitor Project</h1>
+    <p class="blog-meta">Published on June 20, 2025 | Category: Networking, Python, System Admin | By Rodney Gitonga</p>
+
+    <img src="../img/network-monitoring-screenshot.jpg" alt="Network Monitoring Tool Screenshot" class="blog-feature-image">
+    <div class="blog-content">
+      <p>Network monitoring is crucial for maintaining healthy and efficient IT infrastructure, whether it's for a large enterprise or a small home network. My "Multi-Tool System Monitor" project, built with Python, delves into this concept by providing several utilities to gain insights into system activity directly from the command line.</p>
+
+      <h3>Why Build a Custom Monitor?</h3>
+      <p>While numerous powerful network monitoring tools exist, I wanted to understand the underlying principles and build a lightweight, customizable solution. This project allowed me to explore network interfaces, data packets, and system processes hands-on, deepening my understanding of how systems communicate and operate.</p>
+
+      <h3>Features of the Multi-Tool System Monitor:</h3>
+      <ul>
+        <li><strong>Network Traffic Monitor:</strong> Real-time display of upload and download speeds, helping to identify bandwidth hogs or unusual activity.</li>
+        <li><strong>Wi-Fi Signal Strength Logger:</strong> Tracks the signal quality of your Wi-Fi connection over time, useful for diagnosing connectivity issues or optimizing router placement.</li>
+        <li><strong>Clipboard History Manager:</strong> A practical utility that saves your clipboard history, allowing you to easily recall previously copied text. This demonstrates file I/O and data persistence.</li>
+      </ul>
+
+      <h3>Technical Deep Dive:</h3>
+      <p>The core of this project relies heavily on Python's `psutil` library, which provides cross-platform access to system details and process utilities. For network statistics, `psutil` offers functions to get network I/O counters. For Wi-Fi signal strength, it often involves parsing system-specific commands (like `netsh wlan show interfaces` on Windows or `iwconfig` on Linux), which can be tricky due to varying outputs across operating systems.</p>
+      <p>Data persistence for the clipboard history is managed using SQLite, a lightweight, file-based database. This keeps the project self-contained and easy to distribute.</p>
+
+      <h3>Challenges Faced:</h3>
+      <p>The biggest hurdle was ensuring cross-platform compatibility, especially for the Wi-Fi signal strength monitoring. Windows and Linux handle network interface information differently. This required conditional logic within the Python script to execute the correct commands and parse their outputs, making the code more robust.</p>
+      <p>Another challenge was presenting real-time data efficiently in a command-line interface, balancing responsiveness with minimal resource consumption.</p>
+
+      <h3>Conclusion</h3>
+      <p>The Multi-Tool System Monitor is more than just a collection of scripts; it's a testament to the power of Python for system administration and monitoring. It highlights how relatively simple tools can provide valuable diagnostic information and showcases the importance of understanding system-level interactions. Feel free to explore the <a href="https://github.com/RodneyGitonga/Multi-Tool-System-Monitor" target="_blank">GitHub repository</a> to see the code in action and potentially adapt it for your own monitoring needs!</p>
+
+      <div class="blog-tags">
+        <span>#Networking</span> <span>#Python</span> <span>#SystemMonitoring</span> <span>#CLI</span> <span>#ITSupport</span> <span>#Troubleshooting</span>
+      </div>
+
+      <div class="blog-navigation">
+        <a href="../index.html#blog" class="btn secondary-btn"><i class="fas fa-arrow-left"></i> Back to Blog Posts</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; <span id="current-year-blog"></span> Rodney Gitonga. All rights reserved.</p>
+    <div class="footer-social-links">
+      <a href="https://www.linkedin.com/in/rodneygitonga/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/RodneyGitonga" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('current-year-blog').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

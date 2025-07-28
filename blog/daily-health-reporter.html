@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post: Automating Daily Health Checks</title>
+    <link rel="stylesheet" href="../css/style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<header id="navbar">
+    <nav class="container">
+        <div class="logo"><a href="../index.html">RodneyGitonga</a></div>
+        <ul>
+            <li><a href="../index.html#hero">Home</a></li>
+            <li><a href="../index.html#about">About Me</a></li>
+            <li><a href="../index.html#experience">Experience</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#education">Education</a></li>
+            <li><a href="../index.html#certifications">Certifications</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li><a href="../index.html#blog" class="active">Blog</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="blog-single-post container">
+    <article>
+        <h1 class="blog-title">Automating Daily Health Checks: The Daily System Health Reporter</h1>
+        <p class="blog-meta">Published on June 25, 2025 | Category: Automation, Windows, System Admin | By Rodney Gitonga</p>
+
+        <img src="../img/health-reporter-screenshot.jpg" alt="Daily System Health Reporter Screenshot" class="blog-feature-image">
+        <div class="blog-content">
+            <p>For IT administrators and even keen individual users, having a clear and consistent overview of system health is paramount. Manual checks are time-consuming and prone to human error. This led me to develop the "Daily System Health Reporter," a Python script designed to automate system monitoring, generate a clean HTML report, and deliver it directly to your inbox.</p>
+
+            <h3>The Need for Automation</h3>
+            <p>Imagine having multiple Windows servers or workstations to manage. Logging into each one daily to check disk space, CPU usage, service status, and event logs is simply inefficient. This script was created to consolidate these checks into an automated, digestible report, allowing for proactive issue detection.</p>
+
+            <h3>What the Reporter Gathers:</h3>
+            <ul>
+                <li><strong>System Information:</strong> Hostname, OS version, boot time.</li>
+                <li><strong>CPU Usage:</strong> Current and average CPU load.</li>
+                <li><strong>Memory Usage:</strong> Total, used, and available RAM.</li>
+                <li><strong>Disk Usage:</strong> Breakdown of all logical drives, showing free space.</li>
+                <li><strong>Network Status:</strong> IP address, network connections, and transfer statistics.</li>
+                <li><strong>Running Services:</strong> Lists critical services and their status.</li>
+                <li><strong>Key Event Log Entries:</strong> Filters and presents important warnings/errors from the Windows Event Log.</li>
+                <li><strong>Installed Applications:</strong> (Optional) List of recently installed software.</li>
+            </ul>
+
+            <h3>How It Works (Technical Breakdown):</h3>
+            <p>The script leverages Python's powerful `psutil` library for cross-platform system information. For Windows-specific data, especially for fetching details like Event Log entries or installed applications more robustly, I explored using `WMI (Windows Management Instrumentation)` through Python libraries like `wmi` (though `subprocess` calls to `wmic` or PowerShell can also be used).</p>
+            <p>The generated report is an HTML file. Python's f-strings and basic HTML structuring allow for dynamic content insertion. This makes the report easily readable in any web browser or email client.</p>
+            <p>Sending the email is handled by Python's `smtplib` and `email.mime` modules, allowing for robust email construction (including attachments for the HTML report) and secure transmission (using SSL/TLS).</p>
+
+            <h3>Setting it Up for Daily Runs:</h3>
+            <p>The beauty of this script lies in its automation. It's designed to be scheduled using Windows Task Scheduler. You simply configure it to run daily at a specific time, and it handles the rest – gathering data, generating the report, and emailing it.</p>
+
+            <h3>Impact and Future Outlook:</h3>
+            <p>This project significantly reduces the manual effort required for daily system health checks, freeing up time for more critical tasks. It also provides a consistent record of system performance, which is invaluable for long-term trend analysis and troubleshooting. Future enhancements could include graphical representations within the HTML report, integration with cloud-based logging services, or even predictive analytics based on historical data.</p>
+
+            <div class="blog-tags">
+                <span>#Automation</span> <span>#WindowsServer</span> <span>#Python</span> <span>#ITOperations</span> <span>#SystemAdmin</span> <span>#Reporting</span>
+            </div>
+
+            <div class="blog-navigation">
+                <a href="../index.html#blog" class="btn secondary-btn"><i class="fas fa-arrow-left"></i> Back to Blog Posts</a>
+            </div>
+        </div>
+    </article>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; <span id="current-year-blog"></span> Rodney Gitonga. All rights reserved.</p>
+        <div class="footer-social-links">
+            <a href="https://www.linkedin.com/in/rodneygitonga/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/RodneyGitonga" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year-blog').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

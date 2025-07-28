@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post: Building My Personal Automation Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<header id="navbar">
+    <nav class="container">
+        <div class="logo"><a href="../index.html">RodneyGitonga</a></div> <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#about">About Me</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#education">Education</a></li>
+        <li><a href="../index.html#certifications">Certifications</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#blog" class="active">Blog</a></li> <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    </nav>
+</header>
+
+<main class="blog-single-post container">
+    <article>
+        <h1 class="blog-title">Building My Personal Automation Dashboard with Streamlit and Python</h1>
+        <p class="blog-meta">Published on June 13, 2025 | Category: Python, Automation, AI | By Rodney Gitonga</p>
+
+        <img src="../img/dashboard-screenshot.jpg" alt="Personal Automation Dashboard Screenshot" class="blog-feature-image">
+        <div class="blog-content">
+            <p>Welcome to my journey of creating a personal automation dashboard using Streamlit and Python! In today's fast-paced world, automating repetitive tasks and centralizing information can significantly boost productivity. This project was born out of a desire to have a single, intuitive interface for various daily needs, from tracking cryptocurrency prices to getting real-time weather updates and even leveraging AI for content summarization.</p>
+
+            <h3>The Inspiration and Goal</h3>
+            <p>I often found myself jumping between multiple tabs and applications for simple tasks: checking crypto, weather, system health, or quickly sending an email. The idea was to consolidate these functionalities into one sleek, interactive dashboard. Streamlit, with its ability to quickly turn Python scripts into beautiful web apps, was the perfect tool for this.</p>
+
+            <h3>Key Features and Technologies Used:</h3>
+            <ul>
+                <li><strong>Cryptocurrency Tracking:</strong> Integrated with CoinDesk and CoinGecko APIs to display real-time prices and trends for popular cryptocurrencies.</li>
+                <li><strong>Weather Updates:</strong> Utilized the OpenWeatherMap API to fetch current weather conditions for a specified location.</li>
+                <li><strong>Website Monitoring:</strong> A simple uptime checker to ensure my personal projects and other important sites are live.</li>
+                <li><strong>System Resource Display:</strong> Used `psutil` to monitor CPU, memory, and disk usage directly from the dashboard.</li>
+                <li><strong>Google Drive Backup:</strong> A quick utility to backup specified local folders to Google Drive, leveraging the Google Drive API.</li>
+                <li><strong>Email Sender:</strong> A simple form to send quick emails without opening a mail client.</li>
+                <li><strong>AI-Powered News & Document Summarization:</strong> This is where the Google Gemini API comes in. Users can input text or URLs, and Gemini summarizes them, saving time on reading lengthy articles.</li>
+            </ul>
+
+            <h3>Challenges and Solutions</h3>
+            <p>One of the initial challenges was managing API keys securely and handling different API response formats. I implemented environment variables for sensitive keys and created modular functions for each API integration to keep the code clean and manageable.</p>
+            <p>Another interesting aspect was ensuring the Streamlit app was responsive and visually appealing. Streamlit's intuitive layout options helped, and I used custom CSS (linked from `../css/style.css`) to fine-tune the aesthetics to match my portfolio's theme.</p>
+
+            <h3>Future Enhancements</h3>
+            <p>I'm always looking to expand this dashboard. Future plans include integrating task management, calendar synchronization, and perhaps more advanced data visualization for long-term trends. The modular design makes it easy to add new features without breaking existing ones.</p>
+
+            <h3>Conclusion</h3>
+            <p>Building this personal automation dashboard has been an incredibly rewarding experience. It not only streamlines my daily digital interactions but also serves as a practical demonstration of how Python and Streamlit can be combined with various APIs to create powerful and personalized tools. I encourage you to explore the <a href="https://github.com/RodneyGitonga/Personal-Automation-Dashboard" target="_blank">GitHub repository</a>, experiment with the code, and perhaps even build your own!</p>
+
+            <div class="blog-tags">
+                <span>#Python</span> <span>#Streamlit</span> <span>#APIIntegration</span> <span>#GoogleGemini</span> <span>#Automation</span> <span>#PersonalProject</span>
+            </div>
+
+            <div class="blog-navigation">
+                <a href="../index.html#blog" class="btn secondary-btn"><i class="fas fa-arrow-left"></i> Back to Blog Posts</a>
+            </div>
+        </div>
+    </article>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; <span id="current-year-blog"></span> Rodney Gitonga. All rights reserved.</p>
+        <div class="footer-social-links">
+            <a href="https://www.linkedin.com/in/rodneygitonga/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/RodneyGitonga" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('current-year-blog').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
