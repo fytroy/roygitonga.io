@@ -398,11 +398,59 @@ hr {
 }
 
 /* --- Projects Section --- */
+
+/* New CSS for Project Grouping */
+.project-group {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+.project-group:first-child {
+    border-top: none;
+    margin-top: 0;
+}
+.project-group h3 {
+    font-size: 2em;
+    color: var(--glow-color); /* Highlight group titles */
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.project-group h3 i {
+    margin-right: 15px;
+    color: var(--primary-color); /* Ensure icon color is right */
+}
+.project-group:hover h3 i {
+    color: var(--glow-color); /* Icon glow on hover */
+}
+.group-description {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+.project-visual-placeholder {
+    height: 150px;
+    background-color: rgba(0, 255, 255, 0.05); /* Very subtle background */
+    border: 1px dashed var(--glow-color);
+    margin-bottom: 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--glow-color);
+    font-size: 0.9em;
+    text-align: center;
+    padding: 10px;
+}
+/* End New CSS */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 20px; /* Reduced margin due to project group margin */
 }
 
 .project-card {
